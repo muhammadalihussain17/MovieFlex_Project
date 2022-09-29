@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+.card-container
+{
+    background-color:  #232528;
+    margin-bottom: 100px;
+
+}
+
+body
+{
+    background-color: #232528;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+.usercard
+{
+    width: 500px;
+    height: 180px;
+    background-color: #1a1c1f;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    margin-left: 100px;    
+}
+
+.usercard1
+{
+    width: 400px;
+    height: 180px;
+    background-color: #1a1c1f;
+    margin-bottom: 50px;
+    border-radius: 25px; 
+    margin-left: 38px;
+    margin-top: 10px;
+    padding-top: 14px;
+}
+
+h6
+{
+    color: white !important;
+}
+
+h3
+{
+    color: #D1B418;
+    font-weight: 600;
+    text-align: center;
+    font-style:normal;
+    padding-bottom: 80px;
+}
+
+.pdfbtn1
+{
+    font-weight: 700;
+    margin-left: 60px;
+    border: 2px solid whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.pdfbtn2
+{
+    font-weight: 700;
+    margin-left: 0px;
+    border: 2px solid whitesmoke ;
+    font-family: 'Montserrat', sans-serif;
+    width: 130px;
+    margin-top: 0px;
+    background-color: #D1B418;
+}
+
+.row-container
+{
+    margin-bottom: 60px;
+    margin-left: -120px;
+    margin-top: 20px;
+    
+}
+
+.return-container
+{
+    text-align: center !important;
+}
+
+.imgUrl
+{
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #D1B418;
+    margin-top: -6px;
+    margin-left: -20px;
+    border: 2px solid #D1B418;
+}
+
+.icon
+{
+    color:#1a1c1f;
+    background-color: transparent;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.icon1
+{
+    color: #1a1c1f;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.updatebtn
+{
+    background-color: #D1B418;
+    border-radius: 6px;
+    margin-left: -5px;
+    margin-right: 10px;
+}
+
+.delbtn
+{
+    background-color: #D1B418;
+    border-radius: 6px;
+    margin-left: -5px;
+    margin-right: 10px;  
+}
+
+
+@media (width:1920px) {
+    .card-container
+    {
+      margin-bottom: -80px;
+    }
+  }
+
