@@ -63,3 +63,11 @@ h3
     padding-top: 150px;
   }
 }
+
+
+@media (width:1792px) {
+  .form
+  {
+    padding-top: 170px;
+  }
+}
