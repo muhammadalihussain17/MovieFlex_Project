@@ -63,3 +63,11 @@
     margin-top: 125px;
   }
 }
+
+@media (width:1024px) {
+  .footer-container
+  {
+    margin-top: 600px;
+  }
+}
+
