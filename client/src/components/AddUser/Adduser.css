@@ -97,3 +97,19 @@ h3
 }
 
 
+@media (width:1024px) {
+  .form
+  {
+    padding-top: 200px;
+  }
+}
+
+@media (width:912px) {
+  .form
+  {
+    padding-top: 200px;
+  }
+}
+
+
+
