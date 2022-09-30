@@ -97,3 +97,32 @@ button
 
   }
 
+
+ 
+  @media (width:1280px) {
+    .img
+     {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-left: 60px;
+    }
+    .imgS
+    {
+    width: 200px;
+    height: 260px;
+    border-radius: 30px;
+    margin-left: 0px;
+    border: 3px solid #D1B418;
+    }
+    .imgS1
+    {
+    width: 200px;
+    height: 260px;
+    border-radius: 30px;
+    margin-left: 0px;
+    border: 3px solid #D1B418;
+    }
+
+  }
+
+
