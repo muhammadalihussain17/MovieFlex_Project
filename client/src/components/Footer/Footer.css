@@ -49,3 +49,10 @@
     margin-top: 275px;
   }
 }
+
+@media (width:1536px) {
+  .footer-container
+  {
+    margin-top: 105px;
+  }
+}
