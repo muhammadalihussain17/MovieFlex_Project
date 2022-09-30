@@ -71,3 +71,11 @@
   }
 }
 
+
+@media (width:912px) {
+  .footer-container
+  {
+    margin-top: 600px;
+  }
+}
+
