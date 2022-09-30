@@ -213,3 +213,43 @@ h3
 
 
 
+@media (width:912px) {
+    .pdfbtn1
+    {
+    font-weight: 700;
+    margin-left: -60px;
+    border: 2px solid whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    }
+ 
+
+    .usercard
+    {
+    width: 500px;
+    height: 180px;
+    background-color: #1a1c1f;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    margin-left: 109px;    
+    }
+
+    .card-container
+    {
+    background-color:  #232528;
+    margin-bottom: 40px;
+    }
+    
+    .pdfbtn2
+    {
+    font-weight: 700;
+    margin-left: -30px;
+    border: 2px solid whitesmoke ;
+    font-family: 'Montserrat', sans-serif;
+    width: 130px;
+    margin-top: 0px;
+    background-color: #D1B418;
+    } 
+
+}
+
+
