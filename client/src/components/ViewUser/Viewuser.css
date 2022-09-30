@@ -158,3 +158,26 @@ h3
     }
 }
 
+
+@media (width:1280px) {
+    .pdfbtn1
+    {
+    font-weight: 700;
+    margin-left: 20px;
+    border: 2px solid whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    }
+ 
+
+    .usercard
+    {
+    width: 500px;
+    height: 180px;
+    background-color: #1a1c1f;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    margin-left: 46px;    
+    }
+}
+
+
