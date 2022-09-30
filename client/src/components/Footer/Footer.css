@@ -32,3 +32,20 @@
     margin-top: 323px;
   }
 }
+
+
+
+@media (width:1792px) {
+  .footer-container
+  {
+    margin-top: 368px;
+  }
+}
+
+
+@media (width:1680px) {
+  .footer-container
+  {
+    margin-top: 275px;
+  }
+}
