@@ -4,6 +4,7 @@ import { getAllDataApi, deleteUserDetails,} from '../../service/Api';
 import { Link } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import ReactPaginate from 'react-paginate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Viewuser.css';
 
@@ -14,6 +15,7 @@ const [filterVal,setFilterVal] = useState('');
 const [searchApiData,setSearchApiData] = useState([]);
 const [sort,setSort] = useState([]);
 const [sortVal,setSortValue] = useState('');
+const [pageNumber,setPageNumber] = useState(0);
 
 
 useEffect(() => {
@@ -48,7 +50,7 @@ const deleteUser = async (id) => {
 
 const downloadPdf = () => {
   const input = document.getElementById('Viewuser')
-  html2canvas(input, {logging: true, letterRendering: 1, useCORS:true}).then(canvas => {
+    html2canvas(input, {logging: true, letterRendering: 1, useCORS:true}).then(canvas => {
     const imgWidth = 208;
     const imageHeight = canvas.height * imgWidth/canvas.width
     const imgData = canvas.toDataURL('img/png');
@@ -74,8 +76,35 @@ const handleSort = (e) => {
  
 }
 
+const userPerPage = 6;
+const userVisited = pageNumber * userPerPage;
 
+const displayUsers = user
+.slice(userVisited, userVisited + userPerPage)
+.map(users => {
+  return(
+      <div className='col-lg-6 .col-md-6 usercard shadow-lg'>
+      <div className='row usercard1'>
+      <div className='col-lg-8 col-md-8'>
+      <h6>Name: {users.username}</h6>
+      <h6>Movie Name: {users.moviename}</h6>
+      <h6>Movie Rating: {users.movierating}</h6>
+      <Link to={`/edituser/${users._id}`}><button className='updatebtn'><i className='fa fa-pencil icon'/></button></Link>
+      <button className='delbtn' onClick={() => deleteUser(users._id)} ><i className='fa fa-trash icon'/></button>
+      </div>
+      <div className='col-lg-4 col-md-4'>
+      <img className='imgUrl' src={users.movieurl} alt={''}/>
+      </div>
+      </div>
+      </div>
+  )
+})
 
+const pageCount = Math.ceil(user.length / userPerPage);
+
+const changePage = ({selected}) => {
+  setPageNumber(selected);
+}
 
 
   return (
@@ -89,39 +118,31 @@ const handleSort = (e) => {
            <button className='btn btn-warning pdfbtn1'onClick={() => downloadPdf()} >Download PDF</button>
           </div>
           <div className='col-lg-2 col-md-2'>
-            <select className=' pdfbtn2 form-control' value={sortVal}  onChange={(e) => handleSort(e)}>
+            <select className='btn btn-warning pdfbtn2 form-control' value={sortVal}  onChange={(e) => handleSort(e)}>
               <option>Sort By</option>
               <option id='moviename'>Moviename</option>
             </select>
           </div>
         </div>
-        <div className='row'>
         <h3>MovieFlex Users Database</h3>
-            {
-              user.map(users => {
-                return(
-                    <div className='col-lg-6 usercard shadow-lg'>
-                    <div className='row usercard1'>
-                    <div className='col-lg-8 col-md-8'>
-                    <h6>Name: {users.username}</h6>
-                    <h6>Movie Name: {users.moviename}</h6>
-                    <h6>Movie Rating: {users.movierating}</h6>
-                    <Link to={`/edituser/${users._id}`}><button className='updatebtn'><i className='fa fa-pencil icon'/></button></Link>
-                    <button className='delbtn' onClick={() => deleteUser(users._id)} ><i className='fa fa-trash icon'/></button>
-                    </div>
-                    <div className='col-lg-4 col-md-4'>
-                    <img className='imgUrl' src={users.movieurl} alt={''}/>
-                    </div>
-                    </div>
-                    </div>
-                )
-              })
-            }
-         </div>   
+            <div className='row'>{displayUsers}</div>
+              <ReactPaginate
+               previousLabel={"Previous"}
+               nextLabel={"Next"}
+               pageCount={pageCount}
+               onPageChange={changePage}
+               containerClassName={"paginationBttns"}
+               previousLinkClassName={"previousBttn"}
+               nextLinkClassName={"nextBttn"}
+               disabledClassName={"paginationDisabled"}
+               activeClassName={"paginationActive"}
+              />
       </div>
     </div>
   )
 }
+            
+            
       
-
 export default Viewuser
+
